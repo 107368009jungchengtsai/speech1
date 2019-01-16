@@ -1,6 +1,7 @@
 # speech-recognition
 作法說明
-
+##流程圖
+![image](https://github.com/107368009jungchengtsai/The-Simpsons-Characters-Recognition-Challenge/blob/master/%E6%B5%81%E7%A8%8B%E5%9C%96.jpg)
 
 ## 1.宣告和定義
     import os
@@ -239,4 +240,8 @@
 ## 14.kaggle排名
 ![image](https://github.com/107368009jungchengtsai/speech1/blob/master/7.PNG)
 ## 15.分析
+    這一次參考各種殼層寫法，發覺現在使用的這種表現較佳，做資料分析時，有用到BatchNormalization能有效的提高準確度，但這次提高epochs對於準確度卻是沒
+    有什麼幫助。
 ## 16.改進
+    這次使用的mode是從TensorFlow Speech Recognition Challenge參考上來的，準確率有達到9成以上，但往後無法再提升，可能可以加雜訊，讓model判斷更加
+    完善。
