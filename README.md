@@ -241,7 +241,7 @@
     df.to_csv(os.path.join('sub.csv'), index=False)
     
 ## 15.kaggle排名
-![image](https://github.com/107368009jungchengtsai/speech1/blob/master/7.PNG)
+![image](https://github.com/107368009jungchengtsai/plate-Recognition/blob/master/KAGGLE.PNG)
 ## 16.分析
     這一次參考各種殼層寫法，發覺現在使用的這種表現較佳，做資料分析時，有用到BatchNormalization能有效的提高準確度，但這次提高epochs對於準確度卻是沒
     有什麼幫助。
