@@ -170,9 +170,12 @@
     score = model.evaluate(x_test, y_test, verbose=0)
     print(score)
 ![image](https://github.com/107368009jungchengtsai/speech1/blob/master/5.PNG)
-## 9.mode save
+
+## 9.看val_acc,acc和val_loss,loss圖表
+![image](https://github.com/107368009jungchengtsai/speech1/blob/master/8.PNG)
+## 10.mode save
     model.save('model.h5')
-## 10.test_data讀檔設16000
+## 11.test_data讀檔設16000
     new_sample_rate = 16000
     def test_data_generator(batch=16):
         fpaths = glob(os.path.join(test_data_path, '*wav'))
@@ -201,13 +204,13 @@
             yield fnames, imgs
         raise StopIteration()
         from keras.models import Sequential, Model, load_model
-## 11.labels 順序
+## 12.labels 順序
     test_data=[]
     test_data_name = []
     index = []
     results = []
     label_index = ['down', 'go', 'left', 'no', 'off', 'on', 'right', 'silence', 'stop', 'unknown', 'up', 'yes']
-## 12.共有10500筆
+## 13.共有10500筆
     for i in range(10500):
         sample_rate, samples = wavfile.read(os.path.join(test_data_path+str(i+1)+'.wav'))
         samples = pad_audio(samples)
@@ -231,17 +234,17 @@
     results.append(label_index[predict[i]])
 ![image](https://github.com/107368009jungchengtsai/speech1/blob/master/6.PNG)
 
-## 13.測資存進csv
+## 14.測資存進csv
     df = pd.DataFrame(columns=['id', 'word'])
     df['id'] = index
     df['word'] = results
     df.to_csv(os.path.join('sub.csv'), index=False)
     
-## 14.kaggle排名
+## 15.kaggle排名
 ![image](https://github.com/107368009jungchengtsai/speech1/blob/master/7.PNG)
-## 15.分析
+## 16.分析
     這一次參考各種殼層寫法，發覺現在使用的這種表現較佳，做資料分析時，有用到BatchNormalization能有效的提高準確度，但這次提高epochs對於準確度卻是沒
     有什麼幫助。
-## 16.改進
+## 17.改進
     這次使用的mode是從TensorFlow Speech Recognition Challenge參考上來的，準確率有達到9成以上，但往後無法再提升，可能可以加雜訊，讓model判斷更加
     完善。
